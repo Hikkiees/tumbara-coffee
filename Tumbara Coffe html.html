@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUMBARA | Coffee Seed Supplier — From Seed to Story</title>
+    
+    <!-- Google Fonts Fix Mobile & Desktop -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-cream: #FDFBF7;
+            --bg-card: #F4EFE6;
+            --brown-dark: #2C1A11;
+            --brown-coffee: #5C3A21;
+            --caramel: #C88A4B;
+            --olive-accent: #3A4D39;
+            --text-main: #2B211B;
+            --text-muted: #7A6B63;
+            --border-color: #E6DDD3;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, .brand-logo, .journey-label {
+            font-family: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER / NAVBAR */
+        header {
+            background-color: var(--bg-cream);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-container {
+            cursor: pointer;
+        }
+
+        .brand-logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--brown-dark);
+            letter-spacing: -0.5px;
+            line-height: 1;
+        }
+
+        .brand-descriptor {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--olive-accent);
+            margin-top: 3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-link {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--brown-coffee);
+        }
+
+        .nav-cta {
+            background-color: var(--brown-dark);
+            color: var(--white);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.2s;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--caramel);
+        }
+
+        /* PAGE SYSTEM */
+        .page {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            max-width: 1100px;
+            margin: 60px auto 40px;
+            padding: 0 24px;
+            text-align: center;
+        }
+
+        .tagline-badge {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--olive-accent);
+            background-color: rgba(58, 77, 57, 0.08);
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(58, 77, 57, 0.15);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: var(--brown-dark);
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 32px;
+            font-weight: 400;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--brown-dark);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--brown-coffee);
+        }
+
+        .btn-secondary {
+            background-color: var(--bg-card);
+            color: var(--brown-dark);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--border-color);
+        }
+
+        .hero-banner-img {
+            width: 100%;
+            height: 420px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 1px solid var(--border-color);
+        }
+
+        /* SECTION LAYOUTS */
+        .section-container {
+            max-width: 1100px;
+            margin: 90px auto;
+            padding: 0 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: var(--brown-dark);
+            margin-bottom: 12px;
+        }
+
+        .section-sub {
+            color: var(--text-muted);
+            font-size: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* SIGNATURE SECTION: FROM SEED TO STORY (REVISI MONOKROM ELEGANKU) */
+        .signature-section {
+            background-color: var(--brown-dark);
+            color: var(--bg-cream);
+            border-radius: 24px;
+            padding: 60px 40px;
+            text-align: center;
+            margin: 80px 0;
+            border: 1px solid #3d291d;
+            box-shadow: 0 10px 30px rgba(44, 26, 17, 0.15);
+        }
+
+        .signature-section h2 {
+            color: var(--white);
+            font-size: 32px;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .signature-journey {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            margin: 48px 0 20px;
+            flex-wrap: nowrap;
+        }
+
+        .journey-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 90px;
+        }
+
+        .journey-icon-wrap {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background-color: rgba(200, 138, 75, 0.12);
+            border: 1px solid rgba(200, 138, 75, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .journey-step:hover .journey-icon-wrap {
+            background-color: var(--caramel);
+            transform: translateY(-4px);
+        }
+
+        .journey-step:hover .journey-icon-wrap svg {
+            stroke: var(--brown-dark);
+        }
+
+        .journey-icon-wrap svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--caramel);
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: stroke 0.3s ease;
+        }
+
+        .journey-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--caramel);
+            text-transform: uppercase;
+        }
+
+        .journey-arrow {
+            color: rgba(200, 138, 75, 0.4);
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 24px;
+        }
+
+        /* WHY TUMBARA */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .card-why {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 28px;
+            transition: 0.3s;
+        }
+
+        .card-why:hover {
+            border-color: var(--caramel);
+            transform: translateY(-4px);
+        }
+
+        .card-why h3 {
+            font-size: 18px;
+            color: var(--brown-dark);
+            margin-bottom: 10px;
+        }
+
+        .card-why p {
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* THE ORIGIN SECTION */
+        .origin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .origin-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .origin-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .origin-content {
+            padding: 20px;
+        }
+
+        .origin-content h3 {
+            font-size: 20px;
+            color: var(--brown-dark);
+            margin-bottom: 6px;
+        }
+
+        .origin-content p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* OUR PROCESS */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+        }
+
+        .process-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 24px 16px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .process-num {
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--olive-accent);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .process-box h4 {
+            font-size: 16px;
+            color: var(--brown-dark);
+            margin-bottom: 6px;
+        }
+
+        .process-box p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* KATALOG SEEDS */
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            border-color: var(--caramel);
+            transform: translateY(-4px);
+        }
+
+        .product-img {
+            height: 220px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .product-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-type {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--olive-accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .product-name {
+            font-size: 22px;
+            color: var(--brown-dark);
+            margin-bottom: 4px;
+        }
+
+        .product-origin {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .taste-notes {
+            background-color: var(--bg-cream);
+            padding: 12px 16px;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            border-left: 3px solid var(--caramel);
+        }
+
+        .taste-notes span {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--brown-coffee);
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .taste-notes p {
+            font-size: 13px;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 16px;
+            margin-top: auto;
+        }
+
+        .pack-info {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* MODAL DETAIL PRODUK */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(44, 26, 17, 0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            border-radius: 20px;
+            max-width: 550px;
+            width: 100%;
+            padding: 32px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 1px solid var(--border-color);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .modal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            background-color: var(--bg-cream);
+            padding: 16px;
+            border-radius: 12px;
+            margin: 16px 0 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        .modal-spec h5 {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--olive-accent);
+            letter-spacing: 0.5px;
+        }
+
+        .modal-spec p {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--brown-dark);
+        }
+
+        /* ABOUT & OUR STORY */
+        .story-box {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .story-box p {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        /* CONTACT SECTION */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-info-list p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .contact-info-list strong {
+            color: var(--brown-dark);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--brown-dark);
+            color: var(--bg-cream);
+            padding: 60px 24px 30px;
+            margin-top: 100px;
+        }
+
+        .footer-grid {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--caramel);
+            margin-bottom: 16px;
+        }
+
+        .footer-col p, .footer-col a {
+            font-size: 13px;
+            color: #C5B8AD;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 12px;
+            color: #8C7B70;
+        }
+
+        /* OPTIMASI LAYAR MOBILE / TAMPILAN HP */
+        @media (max-width: 768px) {
+            .hero { margin-top: 30px; }
+            .hero h1 { font-size: 32px; letter-spacing: -0.5px; }
+            .hero p { font-size: 15px; }
+            .hero-banner-img { height: 260px; }
+
+            .signature-section { padding: 40px 20px; }
+            .signature-section h2 { font-size: 24px; }
+            .signature-journey { 
+                flex-direction: column; 
+                gap: 16px; 
+            }
+            .journey-arrow { 
+                transform: rotate(90deg); 
+                margin-bottom: 0; 
+                margin-top: -6px;
+            }
+
+            .nav-links { display: none; }
+            .contact-grid, .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="navbar">
+            <div class="brand-container" onclick="switchPage('home')">
+                <div class="brand-logo">TUMBARA</div>
+                <div class="brand-descriptor">Coffee Seed Supplier</div>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-link active" id="link-home" onclick="switchPage('home')">Home</li>
+                <li class="nav-link" id="link-seeds" onclick="switchPage('seeds')">Our Seeds</li>
+                <li class="nav-link" id="link-story" onclick="switchPage('story')">Our Story</li>
+                <li class="nav-link" id="link-contact" onclick="switchPage('contact')">Contact</li>
+            </ul>
+            <div class="nav-cta" onclick="switchPage('seeds')">Explore Seeds</div>
+        </div>
+    </header>
+
+    <!-- PAGE 1: HOME -->
+    <div id="page-home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <span class="tagline-badge">From Seed to Story</span>
+            <h1>Every Great Coffee Begins With a Seed.</h1>
+            <p>Menyediakan benih kopi pilihan dari Sumatera Utara, berasal dari sumber terpilih untuk memulai perjalanan kopi Anda langsung dari akarnya.</p>
+            <div class="hero-btns">
+                <button class="btn btn-primary" onclick="switchPage('seeds')">Explore Our Seeds</button>
+                <button class="btn btn-secondary" onclick="switchPage('story')">Our Story</button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80" alt="Perkebunan Kopi Sumatera Utara" class="hero-banner-img">
+        </section>
+
+        <!-- Signature Section: From Seed to Story (Elegance Monokrom Icons) -->
+        <div class="section-container">
+            <div class="signature-section">
+                <h2>A Coffee Story Starts Long Before The First Sip.</h2>
+                <p style="color: #C5B8AD; font-size: 14px; max-width: 580px; margin: 0 auto;">Memahami setiap fase pertumbuhan untuk hasil panen dengan karakter cita rasa luar biasa.</p>
+
+                <div class="signature-journey">
+                    <!-- Step 1: Seed -->
+                    <div class="journey-step">
+                        <div class="journey-icon-wrap">
+                            <svg viewBox="0 0 24 24"><path d="M12 22v-9M12 13C12 7.5 7.5 5 2 5c0 5.5 4.5 8 10 8zM12 13c0-5.5 4.5-8 10-8 0 5.5-4.5 8-10 8z"/></svg>
+                        </div>
+                        <span class="journey-label">Seed</span>
+                    </div>
+
+                    <span class="journey-arrow">→</span>
+
+                    <!-- Step 2: Plant -->
+                    <div class="journey-step">
+                        <div class="journey-icon-wrap">
+                            <svg viewBox="0 0 24 24"><path d="M12 22V10M12 10C12 4.5 6 2 2 4c1 6 5 8 10 6zM12 14c0-4 5-6 9-4-1 5-4 6-9 4z"/></svg>
+                        </div>
+                        <span class="journey-label">Plant</span>
+                    </div>
+
+                    <span class="journey-arrow">→</span>
+
+                    <!-- Step 3: Cherry -->
+                    <div class="journey-step">
+                        <div class="journey-icon-wrap">
+                            <svg viewBox="0 0 24 24"><circle cx="7.5" cy="16.5" r="4.5"/><circle cx="16.5" cy="16.5" r="4.5"/><path d="M7.5 12C9 6 12 3 17 3M16.5 12C15 8 13.5 5 12 3"/></svg>
+                        </div>
+                        <span class="journey-label">Cherry</span>
+                    </div>
+
+                    <span class="journey-arrow">→</span>
+
+                    <!-- Step 4: Bean -->
+                    <div class="journey-step">
+                        <div class="journey-icon-wrap">
+                            <svg viewBox="0 0 24 24"><path d="M12 3c5 0 9 4 9 9s-4 9-9 9-9-4-9-9 4-9 9-9z"/><path d="M12 3c-2.5 4.5-2.5 13.5 0 18"/></svg>
+                        </div>
+                        <span class="journey-label">Bean</span>
+                    </div>
+
+                    <span class="journey-arrow">→</span>
+
+                    <!-- Step 5: Coffee -->
+                    <div class="journey-step">
+                        <div class="journey-icon-wrap">
+                            <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+                        </div>
+                        <span class="journey-label">Coffee</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Why Tumbara? -->
+        <section class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Why Tumbara?</h2>
+                <p class="section-sub">Komitmen kami dalam menghadirkan fondasi terbaik bagi perkebunan kopi Anda.</p>
+            </div>
+            <div class="grid-4">
+                <div class="card-why">
+                    <h3>Selected Origins</h3>
+                    <p>Benih berasal dari pohon indukan yang terseleksi dan teruji kualitas pertumbuhannya di tanah dataran tinggi.</p>
+                </div>
+                <div class="card-why">
+                    <h3>Traceable Origin</h3>
+                    <p>Informasi asal varietas dan wilayah sumber benih ditampilkan secara transparan dan jelas.</p>
+                </div>
+                <div class="card-why">
+                    <h3>Carefully Selected</h3>
+                    <p>Setiap benih melalui proses seleksi ketat sebelum dikemas untuk memastikan kualitas fisik benih.</p>
+                </div>
+                <div class="card-why">
+                    <h3>Growing Together</h3>
+                    <p>Mendampingi pelanggan dalam memahami fase awal pertumbuhan benih hingga masa bibit siap tanam.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: The Origin (Born From The Highlands) -->
+        <section class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Born From The Highlands</h2>
+                <p class="section-sub">Sumatera Utara dikenal memiliki karakter tanah volkanik dan iklim mikro ideal untuk melahirkan benih kopi unggul.</p>
+            </div>
+            <div class="origin-grid">
+                <div class="origin-card">
+                    <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=600&q=80" alt="Tanah Karo">
+                    <div class="origin-content">
+                        <h3>Tanah Karo</h3>
+                        <p>Dataran tinggi berhawa sejuk dengan tanah volkanik subur. Menghasilkan benih Arabika dengan karakter keasaman segar dan aroma floral kuat.</p>
+                    </div>
+                </div>
+                <div class="origin-card">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="Sidikalang Dairi">
+                    <div class="origin-content">
+                        <h3>Sidikalang / Dairi</h3>
+                        <p>Kawasan legendaris produsen kopi Sumatera. Pohon indukan di wilayah ini memiliki daya tahan alami yang tinggi dan aroma khas rempah.</p>
+                    </div>
+                </div>
+                <div class="origin-card">
+                    <img src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?auto=format&fit=crop&w=600&q=80" alt="Simalungun">
+                    <div class="origin-content">
+                        <h3>Simalungun</h3>
+                        <p>Wilayah perbukitan dengan intensitas hujan seimbang, menghasilkan varietas benih dengan vigor pertumbuhan yang sangat stabil.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Our Process -->
+        <section class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Our Process</h2>
+                <p class="section-sub">Tahapan penanganan benih dengan standar terbaik dari perkebunan hingga tangan Anda.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-box">
+                    <span class="process-num">01 — SOURCE</span>
+                    <h4>Pemilihan Sumber</h4>
+                    <p>Pengambilan ceri kopi matang dari pohon indukan pilihan.</p>
+                </div>
+                <div class="process-box">
+                    <span class="process-num">02 — SELECT</span>
+                    <h4>Seleksi Benih</h4>
+                    <p>Sortasi manual untuk memisahkan benih cacat atau kurang optimal.</p>
+                </div>
+                <div class="process-box">
+                    <span class="process-num">03 — PREPARE</span>
+                    <h4>Pengeringan & Kemasan</h4>
+                    <p>Proses pengeringan terukur dan pengemasan terlindung.</p>
+                </div>
+                <div class="process-box">
+                    <span class="process-num">04 — DELIVER</span>
+                    <h4>Pengiriman</h4>
+                    <p>Pengiriman aman dengan proteksi kelembapan benih.</p>
+                </div>
+                <div class="process-box">
+                    <span class="process-num">05 — GROW</span>
+                    <h4>Pertumbuhan</h4>
+                    <p>Benih siap disemai untuk memulai perjalanan perkebunan Anda.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAGE 2: OUR SEEDS (KATALOG BENIH) -->
+    <div id="page-seeds" class="page">
+        <section class="section-container" style="margin-top: 40px;">
+            <div class="section-header">
+                <span class="tagline-badge">Varietas Benih Terpilih</span>
+                <h2 class="section-title">Our Seed Collection</h2>
+                <p class="section-sub">Jelajahi benih varietas kopi unggulan dari Sumatera Utara lengkap dengan potensi karakter rasanya.</p>
+            </div>
+
+            <div class="catalog-grid">
+                <!-- Produk 1 -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=600&q=80" alt="Arabika Sigarar Utang" class="product-img">
+                    <div class="product-body">
+                        <span class="product-type">Arabica • Highland</span>
+                        <h3 class="product-name">Arabika Sigarar Utang</h3>
+                        <div class="product-origin">Origin: Tanah Karo, Sumatera Utara</div>
+                        
+                        <div class="taste-notes">
+                            <span>Taste Potential:</span>
+                            <p>Floral · Citrus · Caramel</p>
+                        </div>
+                        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">Varietas lokal genjah dengan tingkat produktivitas tinggi dan adaptif terhadap iklim tropis.</p>
+
+                        <div class="product-footer">
+                            <span class="pack-info">Pack: 500g / 1kg / 5kg</span>
+                            <button class="btn btn-primary" style="padding: 8px 16px; font-size: 12px;" onclick="openModal('Sigarar Utang', 'Arabica', 'Tanah Karo, Sumut', 'Pohon Indukan Terseleksi Karo', '1.000 - 1.400 mdpl', 'Floral · Citrus · Caramel', '500g / 1kg / 5kg', 'Tersedia')">Explore Seed</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produk 2 -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="Arabika Sidikalang" class="product-img">
+                    <div class="product-body">
+                        <span class="product-type">Arabica • High Altitude</span>
+                        <h3 class="product-name">Arabika Sidikalang (Lini S)</h3>
+                        <div class="product-origin">Origin: Sidikalang, Dairi</div>
+                        
+                        <div class="taste-notes">
+                            <span>Taste Potential:</span>
+                            <p>Spicy · Chocolate · Sweet Aftertaste</p>
+                        </div>
+                        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">Varietas klasik beraroma rempah khas dengan daya tahan baik terhadap penyakit karat daun.</p>
+
+                        <div class="product-footer">
+                            <span class="pack-info">Pack: 500g / 1kg / 5kg</span>
+                            <button class="btn btn-primary" style="padding: 8px 16px; font-size: 12px;" onclick="openModal('Sidikalang (Lini S)', 'Arabica', 'Sidikalang, Dairi', 'Pohon Indukan Legendaris Dairi', '1.200 - 1.600 mdpl', 'Spicy · Chocolate · Sweet', '500g / 1kg / 5kg', 'Tersedia')">Explore Seed</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produk 3 -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?auto=format&fit=crop&w=600&q=80" alt="Robusta Sipirok" class="product-img">
+                    <div class="product-body">
+                        <span class="product-type">Robusta • High-Land</span>
+                        <h3 class="product-name">Robusta High-Land Sipirok</h3>
+                        <div class="product-origin">Origin: Sipirok, Tapanuli Selatan</div>
+                        
+                        <div class="taste-notes">
+                            <span>Taste Potential:</span>
+                            <p>Bold Chocolate · Nutty · Low Acid</p>
+                        </div>
+                        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">Benih Robusta unggul dari dataran tinggi Sipirok. Menghasilkan pohon kokoh dengan profil rasa tebal.</p>
+
+                        <div class="product-footer">
+                            <span class="pack-info">Pack: 500g / 1kg / 5kg</span>
+                            <button class="btn btn-primary" style="padding: 8px 16px; font-size: 12px;" onclick="openModal('Robusta Sipirok', 'Robusta', 'Sipirok, Tapsel', 'Indukan Robusta High-Land', '400 - 900 mdpl', 'Bold Chocolate · Nutty', '500g / 1kg / 5kg', 'Tersedia')">Explore Seed</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAGE 3: OUR STORY -->
+    <div id="page-story" class="page">
+        <section class="section-container" style="margin-top: 40px;">
+            <div class="section-header">
+                <span class="tagline-badge">About Tumbara</span>
+                <h2 class="section-title">Where Tumbara Begins</h2>
+            </div>
+            
+            <div class="story-box">
+                <p><strong>Tumbara</strong> lahir dari sebuah gagasan sederhana: setiap perjalanan kopi dimulai jauh sebelum secangkir kopi disajikan—dari sebuah benih.</p>
+                <p>Nama <em>Tumbara</em> terinspirasi dari filosofi 'tumbuh' dan 'bara'—semangat awal pertumbuhan yang menopang seluruh rantai ekosistem kopi. Kami berfokus menyediakan benih kopi berkualitas yang bersumber langsung dari pohon-pohon indukan pilihan di dataran tinggi Sumatera Utara, seperti Tanah Karo, Sidikalang, dan Simalungun.</p>
+                <p>Kami melayani petani lokal, pemilik perkebunan, hingga penggiat kopi yang ingin membangun kebun kopi sendiri dengan kejelasan asal-usul varietas benih. Di Tumbara, kami percaya bahwa kualitas rasa di masa depan selalu dimulai dari ketelitian memilih benih hari ini.</p>
+            </div>
+
+            <!-- Our Commitment -->
+            <div style="margin-top: 50px;">
+                <h3 style="text-align: center; color: var(--brown-dark); margin-bottom: 24px;">Our Commitment</h3>
+                <div class="grid-4">
+                    <div class="card-why" style="text-align: center;">
+                        <h4>Selected Seeds</h4>
+                        <p>Hanya benih kondisi fisik terbaik yang kami salurkan.</p>
+                    </div>
+                    <div class="card-why" style="text-align: center;">
+                        <h4>Clear Origin</h4>
+                        <p>Transparansi asal varietas dan wilayah sumber benih.</p>
+                    </div>
+                    <div class="card-why" style="text-align: center;">
+                        <h4>Careful Handling</h4>
+                        <p>Penanganan dan pengemasan benih yang terjaga.</p>
+                    </div>
+                    <div class="card-why" style="text-align: center;">
+                        <h4>Reliable Supply</h4>
+                        <p>Ketersediaan pasokan benih untuk kebutuhan perkebunan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAGE 4: CONTACT -->
+    <div id="page-contact" class="page">
+        <section class="section-container" style="margin-top: 40px;">
+            <div class="section-header">
+                <span class="tagline-badge">Get in Touch</span>
+                <h2 class="section-title">Let’s Grow Together.</h2>
+                <p class="section-sub">Punya pertanyaan mengenai varietas benih atau kebutuhan dalam jumlah besar? Mari bicara dengan kami.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info-list">
+                    <h3 style="margin-bottom: 20px; color: var(--brown-dark);">Hubungi Tumbara</h3>
+                    <p><strong>Location:</strong> Medan & Karo, Sumatera Utara, Indonesia</p>
+                    <p><strong>WhatsApp:</strong> +62 812-3456-7890</p>
+                    <p><strong>Email:</strong> hello@tumbaraseed.com</p>
+                    <p><strong>Instagram:</strong> @tumbaraseed</p>
+                    
+                    <div style="margin-top: 30px;">
+                        <a href="https://wa.me/6281234567890?text=Halo%20Tumbara,%20saya%20ingin%20bertanya%20mengenai%20ketersediaan%20benih." target="_blank" class="btn btn-primary">Talk to Tumbara →</a>
+                    </div>
+                </div>
+
+                <form onsubmit="handleFormSubmit(event)">
+                    <div style="margin-bottom: 16px;">
+                        <label style="font-size: 13px; font-weight: 600; color: var(--brown-dark); display: block; margin-bottom: 6px;">Nama Lengkap</label>
+                        <input type="text" id="form-name" placeholder="Nama Anda" required style="width:100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-cream);">
+                    </div>
+                    <div style="margin-bottom: 16px;">
+                        <label style="font-size: 13px; font-weight: 600; color: var(--brown-dark); display: block; margin-bottom: 6px;">Nomor WhatsApp</label>
+                        <input type="tel" id="form-phone" placeholder="08xxxxxxxxxx" required style="width:100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-cream);">
+                    </div>
+                    <div style="margin-bottom: 16px;">
+                        <label style="font-size: 13px; font-weight: 600; color: var(--brown-dark); display: block; margin-bottom: 6px;">Pesan / Kebutuhan Benih</label>
+                        <textarea id="form-message" rows="4" placeholder="Tuliskan varietas benih atau pertanyaan Anda..." required style="width:100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-cream);"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Kirim Pesan via WhatsApp</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- MODAL DETAIL PRODUK -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <span id="modal-type" class="product-type">Arabica</span>
+            <h3 id="modal-title" style="font-size: 24px; color: var(--brown-dark); margin-bottom: 4px;">Nama Varietas</h3>
+            <p id="modal-origin" style="font-size: 13px; color: var(--text-muted);">Origin</p>
+
+            <div class="modal-grid">
+                <div class="modal-spec">
+                    <h5>Seed Source</h5>
+                    <p id="modal-source">-</p>
+                </div>
+                <div class="modal-spec">
+                    <h5>Growing Altitude</h5>
+                    <p id="modal-altitude">-</p>
+                </div>
+                <div class="modal-spec">
+                    <h5>Taste Potential</h5>
+                    <p id="modal-taste">-</p>
+                </div>
+                <div class="modal-spec">
+                    <h5>Available Weight</h5>
+                    <p id="modal-weight">-</p>
+                </div>
+            </div>
+
+            <a id="modal-wa-btn" href="#" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center;">Request This Seed via WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="brand-logo" style="color: var(--white);">TUMBARA</div>
+                <div style="font-size: 11px; color: var(--caramel); letter-spacing: 2px; font-weight: 700; margin-bottom: 12px;">COFFEE SEED SUPPLIER</div>
+                <p style="max-width: 300px;">Menyediakan benih kopi unggul dari dataran tinggi Sumatera Utara. Memulai cerita kopi dari benih.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a onclick="switchPage('seeds')" style="cursor:pointer;">Our Seeds</a>
+                <a onclick="switchPage('story')" style="cursor:pointer;">Our Story</a>
+                <a onclick="switchPage('home')" style="cursor:pointer;">The Origin</a>
+                <a onclick="switchPage('contact')" style="cursor:pointer;">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+                <a href="https://wa.me/6281234567890" target="_blank">WhatsApp</a>
+                <a href="mailto:hello@tumbaraseed.com">Email</a>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 TUMBARA. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- SCRIPT DYNAMIC NAVIGATION & MODAL -->
+    <script>
+        function switchPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(link => link.classList.remove('active'));
+            
+            const activeLink = document.getElementById('link-' + pageId);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openModal(title, type, origin, source, altitude, taste, weight, availability) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-type').innerText = type + ' • ' + availability;
+            document.getElementById('modal-origin').innerText = 'Origin: ' + origin;
+            document.getElementById('modal-source').innerText = source;
+            document.getElementById('modal-altitude').innerText = altitude;
+            document.getElementById('modal-taste').innerText = taste;
+            document.getElementById('modal-weight').innerText = weight;
+
+            const waMessage = `Halo Tumbara, saya tertarik dengan benih ${title}. Saya ingin mengetahui ketersediaan dan harga.`;
+            const waLink = `https://wa.me/6281234567890?text=${encodeURIComponent(waMessage)}`;
+            document.getElementById('modal-wa-btn').setAttribute('href', waLink);
+
+            document.getElementById('productModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('productModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('productModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const msg = document.getElementById('form-message').value;
+
+            const fullMsg = `Halo Tumbara, perkenalkan nama saya ${name} (${phone}).\n\n${msg}`;
+            window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(fullMsg)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
